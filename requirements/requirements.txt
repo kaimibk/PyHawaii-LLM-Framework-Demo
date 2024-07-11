@@ -1,0 +1,5 @@
+langchain
+langchain-openai
+llama-index
+wikipedia
+llama-index-readers-wikipedia

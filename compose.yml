@@ -1,0 +1,17 @@
+services:
+  jupyterlab:
+    build:
+      context: .
+      # target: code-server
+      target: base
+    ports: [ "${JUPYTERLAB_PORT-8888}:8888" ]
+    networks: [ app-net ]
+    working_dir: /app/
+    volumes:
+      - ./notebooks:/app/notebooks
+      - ./data:/app/data
+    env_file:
+      - .env
+
+networks:
+  app-net: {}
